@@ -65,7 +65,7 @@ console.log(color === copiedColor);
 //FIRST WAY: SPREAD OPERATOR
 const spreadOperator = {
     firstName: "team",
-    university: "Umilag",
+    university: "Unilag",
   };
   
   const otherSp = { ...spreadOperator };
@@ -112,6 +112,7 @@ const newNumber2 = [...number2];    //Shallow Clone
 
 console.log(number2 === copiedNumber);  //true
 console.log(number2 === newNumber2);    //false
+console.log(newNumber2, copiedNumber, number2);
 
 
 // ********* EXAMPLE (FOR ARRAY [])
@@ -125,6 +126,7 @@ copiedNumber5.push(6)
 console.log(number5);       // [1, 2, 3, 4, 5, 8, 6]
 console.log(copiedNumber5);
 console.log(newNumber6);
+console.log(number5 === copiedNumber5);
 
 //********* EXAMPLE  (FOR OBJECT {})
 const person5 = {
@@ -143,13 +145,14 @@ console.log(otherPerson5);
 
 // ********** EXAMPLE
 const numbs = [1, 2, 3, 4, 5, 6, 7];
-const cpyNumbs = numbs;
+const copyNumbs = numbs;
+console.log(copyNumbs === numbs);
 
 const newNumbs = numbs.slice();     //Shallow Clone
 numbs.push(8);
 
 console.log(numbs);
-console.log(cpyNumbs);
+console.log(copyNumbs);
 console.log(newNumbs);
 
 
@@ -173,6 +176,7 @@ console.log(newRealG);
 //******************************************** DEEP CLONING ******************************************
 //Testing for nested object which changes for shallow cloning
 const details = {
+
     firstName: 'Rocco',
     car: {
         brand: 'Benz',
@@ -184,6 +188,7 @@ const details = {
 const newDetails = {...details};  //With shallow Clone
 newDetails.firstName = 'Roqib';
 newDetails.car.color = 'white'  //It changes the the nested object
+newDetails.car.wheel= 100
 
 console.log(details);
 console.log(newDetails);
@@ -200,10 +205,19 @@ const myPeople = {
 }
 
 const stringified = JSON.stringify(myPeople);   //FIRST STEP
+// stringified.fullName = 'Lameed Abiodun Olamide'
+// stringified.car.door = 6
+// stringified.car.color = 'Black'
+// stringified.car.brand = 'bugartty'
 console.log(stringified);
 
 const newPeople = JSON.parse(stringified);      //SECOND STEP (CLONED SUCCESSFULLY)
+newPeople.fullName = 'Lameed Abiodun Olamide'
+newPeople.car.door = 4
+newPeople.car.color = 'Black'
+newPeople.car.brand = 'bugartty'
 console.log(newPeople);
+
 
 
 // EXAMPLE
@@ -217,6 +231,7 @@ const myObj = {
 
 console.log(myObj);
 console.log(typeof myObj.name);
+console.log(typeof myObj.hobbies);
 myObj.hello();
 
 const send = JSON.stringify(myObj);
@@ -228,4 +243,3 @@ console.log(receive);
 
 
 
-let

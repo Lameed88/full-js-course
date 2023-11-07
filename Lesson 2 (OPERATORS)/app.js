@@ -2,6 +2,9 @@
 const a = 4;
 const b = 5;
 
+
+
+
 let result = 0;
 result = a + b;
 console.log(result);
