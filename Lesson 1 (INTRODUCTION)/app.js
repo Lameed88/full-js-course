@@ -55,6 +55,7 @@ const person = {
     lastName: "Muhammad"
 }
 
+
 console.log(person);
 console.log(person.lastName); //To call the lastName which is "Muhammad"  (Dot notation)
 
@@ -123,5 +124,3 @@ console.log(add);
 
 const add2 = `${2+2}`;
 console.log(add2);
-
-
